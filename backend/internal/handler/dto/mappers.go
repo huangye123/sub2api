@@ -560,6 +560,7 @@ func AccountSummaryFromService(a *service.Account) *AccountSummary {
 
 func usageLogFromServiceUser(l *service.UsageLog) UsageLog {
 	// 鏅€氱敤鎴?DTO锛氫弗绂佸寘鍚鐞嗗憳瀛楁锛堜緥濡?account_rate_multiplier銆乮p_address銆乤ccount锛夈€?	requestType := l.EffectiveRequestType()
+	requestType := l.EffectiveRequestType()
 	stream, openAIWSMode := service.ApplyLegacyRequestFields(requestType, l.Stream, l.OpenAIWSMode)
 	requestedModel := l.RequestedModel
 	if requestedModel == "" {
